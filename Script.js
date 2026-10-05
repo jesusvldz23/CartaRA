@@ -63,7 +63,7 @@ const CONFIG = {
   extras: [
     "./foto6.jpeg", "./foto7.jpeg", "./foto8.jpeg", "./foto9.jpeg",
     "./foto10.jpeg", "./foto11.jpeg", "./foto12.jpeg", "./foto13.jpeg",
-    "./foto14.jpeg", "./foto15.jpeg"
+    "./foto14.jpeg", "./foto15.jpeg", "./foto16.jpeg", "./foto17.jpeg", "./foto18.jpeg", "./foto19.jpeg","./foto20.jpeg"
   ]
 };
 
