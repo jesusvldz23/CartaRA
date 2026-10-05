@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Rosa ✨</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#050816">
+  <meta name="description" content="Un cielo lleno de recuerdos para Rosa">
+  <meta property="og:title" content="Para Rosa ✨">
+  <meta property="og:description" content="Cada estrella es un momento contigo">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="constelacion.css">
+</head>
+<body>
+
+  <!-- Estrellas de fondo y estrellas fugaces -->
+  <div class="fondo" id="fondo" aria-hidden="true"></div>
+
+  <!-- Pantalla de inicio -->
+  <section class="intro" id="intro">
+    <div class="halo" aria-hidden="true"></div>
+    <p class="intro-pre">Para ti</p>
+    <h1 class="nombre" id="nombre">Rosalina</h1>
+    <p id="mensaje"></p>
+    <p id="contador"></p>
+    <button type="button" class="btn-contorno btn-entrar" id="btnEntrar">
+      <span class="mini-estrella" aria-hidden="true"></span>Mirar el cielo
+    </button>
+  </section>
+
+  <!-- Barra superior: progreso y música -->
+  <div class="hud" id="hud">
+    <p class="progreso" id="progreso" aria-live="polite">✨ 0 / 5 recuerdos</p>
+    <button type="button" class="btn-musica" id="btnMusica" aria-label="Silenciar música" aria-pressed="false">🔊</button>
+  </div>
+
+  <!-- El cielo con la constelación -->
+  <main class="constelacion" id="constelacion">
+    <svg class="lineas" id="lineas" aria-hidden="true"></svg>
+    <div id="hitos"></div>
+    <div id="extras"></div>
+  </main>
+
+  <p class="pista" id="pista">Toca las estrellas brillantes ✨</p>
+
+  <!-- Ventana de recuerdo -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo" hidden>
+    <div class="modal-fondo" id="modalFondo"></div>
+
+    <article class="recuerdo" id="recuerdo">
+      <button type="button" class="cerrar" id="btnCerrar" aria-label="Cerrar">✕</button>
+
+      <figure class="polaroid" id="polaroid">
+        <img id="modalFoto" alt="">
+        <figcaption id="modalEtiqueta"></figcaption>
+      </figure>
+
+      <div class="recuerdo-texto" id="recuerdoTexto">
+        <p class="fecha" id="modalFecha"></p>
+        <h2 id="modalTitulo"></h2>
+        <p class="texto" id="modalTexto"></p>
+      </div>
+
+      <nav class="recuerdo-nav" id="modalNav">
+        <button type="button" class="nav-btn" id="btnPrev">‹ Anterior</button>
+        <button type="button" class="nav-btn principal" id="btnNext">Siguiente ›</button>
+      </nav>
+    </article>
+  </div>
+
+  <!-- Final -->
+  <section class="final" id="final">
+    <h2 id="finalTitulo">Te amo millones ❤️</h2>
+    <p id="finalSub">Eres la mejor novia del mundo</p>
+    <button type="button" class="btn-contorno" id="btnSeguir">Seguir mirando</button>
+  </section>
+
+  <audio id="musica" loop preload="auto">
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="constelacion.js"></script>
+</body>
+</html>
