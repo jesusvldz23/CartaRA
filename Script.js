@@ -4,8 +4,8 @@
 const CONFIG = {
   nombre: "Rosalina",
   mensaje: "Cada estrella de este cielo es un momento contigo ✨",
-  mensajeFinal: "Te amo millones ❤️",
-  subFinal: "Eres la mejor novia del mundo",
+  mensajeFinal: "Te amo muchisimo 🤍",
+  subFinal: "Juntos para toda la vida 💍",
 
   // Los meses van de 0 a 11 (0 = enero, 1 = febrero...)
   // Desde esta fecha se cuenta "Llevamos X días juntos"
@@ -20,9 +20,9 @@ const CONFIG = {
       etiqueta: "El comienzo",
       titulo: "El día que te pedí ser mi novia",
       fecha: new Date(2023, 1, 2),
-      foto: "./foto1.jpeg",
+      foto: "./foto3.jpeg",
       // ✏️ EDITA ESTE TEXTO con algo tuyo
-      texto: "No sabía que ese día empezaba mi historia favorita. Gracias por decir que sí."
+      texto: "El día que empezó nuestra historia. Ese día no sabía todo lo que íbamos a vivir juntos, pero sí sabía que quería que fueras tú y que quería tenerte a mi lado."
     },
     {
       etiqueta: "1 año",
@@ -30,31 +30,31 @@ const CONFIG = {
       fecha: new Date(2024, 1, 2),
       foto: "./foto2.jpeg",
       // ✏️ EDITA ESTE TEXTO
-      texto: "Un año de risas, de aprender a conocernos y de elegirnos todos los días."
+      texto: "Nuestro primer año juntos, lleno de momentos que nunca voy a olvidar. Un año en el que fui conociéndote cada vez más y me di cuenta de lo mucho que te amo."
     },
     {
       etiqueta: "2 años",
       titulo: "Cumplimos 2 años",
       fecha: new Date(2025, 1, 2),
-      foto: "./foto3.jpeg",
+      foto: "./foto4.jpeg",
       // ✏️ EDITA ESTE TEXTO
-      texto: "Dos años y cada vez te quiero más. Contigo hasta lo normal se vuelve especial."
+      texto: "Dos años juntos y todavía seguíamos creando recuerdos que se quedarían para siempre. Cada momento contigo hacía que me sintiera más seguro de que no quería compartir mi vida con nadie más."
     },
     {
       etiqueta: "3 años",
       titulo: "Cumplimos 3 años",
       fecha: new Date(2026, 1, 2),
-      foto: "./foto4.jpeg",
+      foto: "./foto13.jpeg",
       // ✏️ EDITA ESTE TEXTO
-      texto: "Tres años a tu lado y sigo sin creer mi suerte."
+      texto: "Tres años de nosotros, de risas, momentos difíciles, aventuras y muchísimos recuerdos. Después de todo lo que habíamos vivido, mi amor por ti solo seguía creciendo."
     },
     {
       etiqueta: "La propuesta",
       titulo: "El día que te pedí matrimonio",
-      fecha: null, // ✏️ PON LA FECHA así:  new Date(2026, 5, 20)  (año, mes de 0 a 11, día)
-      foto: "./foto5.jpeg",
+      fecha: new Date(2026, 7, 17), 
+      foto: "./foto1.jpeg",
       // ✏️ EDITA ESTE TEXTO
-      texto: "Ese día te pedí que compartieras tu vida conmigo. Y lo mejor es que apenas empieza."
+      texto: "Ese día te pedí que compartieras tu vida conmigo. Después de tantos momentos juntos no quería que nuestra historia terminara ahí, quería que todo lo que vivimos fuera apenas el comienzo de una vida juntos."
     }
   ],
 
