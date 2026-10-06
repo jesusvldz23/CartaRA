@@ -1,5 +1,5 @@
 /* =========================================================
-   CONFIGURACIÓN — aquí editas todo lo personal
+   CONFIGURACIÓN de lo personal
    ========================================================= */
 const CONFIG = {
   nombre: "Rosalina",
@@ -21,7 +21,7 @@ const CONFIG = {
       titulo: "El día que te pedí ser mi novia",
       fecha: new Date(2023, 1, 2),
       foto: "./foto3.jpeg",
-      // ✏️ EDITA ESTE TEXTO con algo tuyo
+      // TEXTO
       texto: "El día que empezó nuestra historia. Ese día no sabía todo lo que íbamos a vivir juntos, pero sí sabía que quería que fueras tú y que quería tenerte a mi lado."
     },
     {
@@ -29,7 +29,7 @@ const CONFIG = {
       titulo: "Cumplimos 1 año",
       fecha: new Date(2024, 1, 2),
       foto: "./foto2.jpeg",
-      // ✏️ EDITA ESTE TEXTO
+      // TEXTO
       texto: "Nuestro primer año juntos, lleno de momentos que nunca voy a olvidar. Un año en el que fui conociéndote cada vez más y me di cuenta de lo mucho que te amo."
     },
     {
@@ -37,7 +37,7 @@ const CONFIG = {
       titulo: "Cumplimos 2 años",
       fecha: new Date(2025, 1, 2),
       foto: "./foto4.jpeg",
-      // ✏️ EDITA ESTE TEXTO
+      // TEXTO
       texto: "Dos años juntos y todavía seguíamos creando recuerdos que se quedarían para siempre. Cada momento contigo hacía que me sintiera más seguro de que no quería compartir mi vida con nadie más."
     },
     {
@@ -45,7 +45,7 @@ const CONFIG = {
       titulo: "Cumplimos 3 años",
       fecha: new Date(2026, 1, 2),
       foto: "./foto13.jpeg",
-      // ✏️ EDITA ESTE TEXTO
+      // TEXTO
       texto: "Tres años de nosotros, de risas, momentos difíciles, aventuras y muchísimos recuerdos. Después de todo lo que habíamos vivido, mi amor por ti solo seguía creciendo."
     },
     {
@@ -53,13 +53,12 @@ const CONFIG = {
       titulo: "El día que te pedí matrimonio",
       fecha: new Date(2026, 7, 17), 
       foto: "./foto1.jpeg",
-      // ✏️ EDITA ESTE TEXTO
+      // TEXTO
       texto: "Ese día te pedí que compartieras tu vida conmigo. Después de tantos momentos juntos no quería que nuestra historia terminara ahí, quería que todo lo que vivimos fuera apenas el comienzo de una vida juntos."
     }
   ],
 
   // El resto de las fotos: estrellas pequeñas que solo muestran la foto.
-  // Si no quieres ninguna, déjalo como  extras: []
   extras: [
     "./foto6.jpeg", "./foto7.jpeg", "./foto8.jpeg", "./foto9.jpeg",
     "./foto10.jpeg", "./foto11.jpeg", "./foto12.jpeg", "./foto13.jpeg",
@@ -113,15 +112,34 @@ function escribirTexto() {
 function actualizarContador() {
   const inicio = CONFIG.fechaInicio;
   const hoy = new Date();
-  const msPorDia = 24 * 60 * 60 * 1000;
 
-  // Se comparan fechas de calendario (sin horas) para evitar desfases
-  const dias = Math.floor(
-    (Date.UTC(hoy.getFullYear(), hoy.getMonth(), hoy.getDate()) -
-     Date.UTC(inicio.getFullYear(), inicio.getMonth(), inicio.getDate())) / msPorDia
-  );
+  // Diferencia de calendario: años, meses y días (sin horas, para evitar desfases)
+  let anios = hoy.getFullYear() - inicio.getFullYear();
+  let meses = hoy.getMonth() - inicio.getMonth();
+  let dias = hoy.getDate() - inicio.getDate();
 
-  $("contador").textContent = "Llevamos " + dias + " días juntos ✨";
+  if (dias < 0) {
+    meses--;
+    // Días que tiene el mes anterior al actual
+    dias += new Date(hoy.getFullYear(), hoy.getMonth(), 0).getDate();
+  }
+  if (meses < 0) {
+    anios--;
+    meses += 12;
+  }
+  dias = Math.max(dias, 0);
+
+  const partes = [];
+  if (anios > 0) partes.push(anios + (anios === 1 ? " año" : " años"));
+  if (meses > 0) partes.push(meses + (meses === 1 ? " mes" : " meses"));
+  if (dias > 0 || partes.length === 0) partes.push(dias + (dias === 1 ? " día" : " días"));
+
+  // "3 años, 8 meses y 3 días"
+  const texto = partes.length > 1
+    ? partes.slice(0, -1).join(", ") + " y " + partes[partes.length - 1]
+    : partes[0];
+
+  $("contador").textContent = "Llevamos " + texto + " juntos ✨";
 }
 
 /* =========================================================
